@@ -35,7 +35,7 @@ void draw(){
 }
 
 
-void mouseClicked() {
+void mousePressed() {
   wsc.sendMessage(mouseX+","+mouseY);
 }
 
