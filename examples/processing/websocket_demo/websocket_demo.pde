@@ -19,12 +19,12 @@ class Point {
 ArrayList<Point> points = new ArrayList<Point>();
 
 
-void setup(){
-  size(200,200);
+void settings(){
+  size(800, 800);
   
   newEllipse=true;
   
-  wsc= new WebsocketClient(this, "ws://localhost:3000");
+  wsc= new WebsocketClient(this, "ws://websocket-server-sample.herokuapp.com/");
   now=millis();
 }
 
