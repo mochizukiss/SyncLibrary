@@ -1,12 +1,17 @@
 # 必要なもの
-## Web Socket Server
+## WebSocket Server
 端末間でリアルタイムにデータ通信する拠点として利用します。
 # 準備
-## Web Socket Serverの作成
+## WebSocket Serverの作成
 色々な作成方法がありますが、ここではプロトタイプに使う程度の性能のWeb Socket Serverを無料で作成できるherokuを使った手順を示します。
 1. heroku アカウントの作成
-herokuのアカウントを持っていない場合h、まずアカウントを作成してください
+herokuのアカウントを持っていない場合は、まずアカウントを作成してください
 ⇒ https://signup.heroku.com/jp
+
+2. node-websocketアプリケーションをherokuにデプロイ
+node.jsで実装したWebSocketのサンプルがあるので、これをherokuにデプロイします
+https://github.com/heroku-examples/node-websockets
+このページの「Deploy to Heroku」を押します
 
 ## 必要に応じて
 - heroku(https://www.heroku.com/) のアカウント
