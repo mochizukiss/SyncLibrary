@@ -1,0 +1,6 @@
+{
+  "name": "Node.js WebSocket for visual arts",
+  "description": "ProcessingやTouchDesignerで作成したアプリケーション間でリアルタイムに情報をやりとりするためのWebSocketサーバーをherokuに作成します",
+  "repository": "https://github.com/toyamarinyon/websocket-server-sample",
+  "keywords": ["node", "websocket"]
+}
