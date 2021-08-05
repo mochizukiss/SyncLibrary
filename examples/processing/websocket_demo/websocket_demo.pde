@@ -1,8 +1,6 @@
 import websockets.*;
 
 WebsocketClient wsc;
-int now;
-boolean newEllipse;
 
 class Point {
   private int x;
@@ -18,19 +16,16 @@ class Point {
 
 ArrayList<Point> points = new ArrayList<Point>();
 
+String websocketServerName = "replace-it-with-your-heroku-app-name";
 
 void settings(){
-  size(800, 800);
-  
-  newEllipse=true;
-  
-  wsc= new WebsocketClient(this, "ws://websocket-server-sample.herokuapp.com/");
-  now=millis();
+  size(800, 800); 
+  wsc= new WebsocketClient(this, "ws://"+websocketServerName + ".herokuapp.com");
 }
 
 void draw(){
-  for (Point point : points) {
-    point.drawCircle();
+  for (int i=0;i<points.size();i++) {
+    points.get(i).drawCircle();
   }
 }
 
@@ -43,5 +38,4 @@ void webSocketEvent(String msg){
   String[] point = split(msg, ',');
   points.add(new Point(int(point[0]), int(point[1])));
   println(msg);
-  newEllipse=true;
 }
