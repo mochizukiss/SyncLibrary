@@ -2,31 +2,19 @@ import websockets.*;
 
 WebsocketClient wsc;
 
-class Point {
-  private int x;
-  private int y;
-  Point(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
-  void drawCircle() {
-    circle(this.x, this.y, 20);
-  }
-}
+int point_x=400;
+int point_y=400;
 
-ArrayList<Point> points = new ArrayList<Point>();
+//サーバー名
+String websocketServerName = "websockect-mochizuki";
 
-String websocketServerName = "replace-it-with-your-heroku-app-name";
-
-void settings(){
+void settings() {
   size(800, 800); 
   wsc= new WebsocketClient(this, "ws://"+websocketServerName + ".herokuapp.com");
 }
 
-void draw(){
-  for (int i=0;i<points.size();i++) {
-    points.get(i).drawCircle();
-  }
+void draw() {
+    ellipse(point_x, point_y, 20, 20);
 }
 
 
@@ -34,8 +22,11 @@ void mousePressed() {
   wsc.sendMessage(mouseX+","+mouseY);
 }
 
-void webSocketEvent(String msg){
-  String[] point = split(msg, ',');
-  points.add(new Point(int(point[0]), int(point[1])));
-  println(msg);
+void webSocketEvent(String msg) {
+  println(msg); //送られてきたメッセージの表示
+  String[] point = split(msg, ','); //メッセージの分離：カンマ(,)区切り
+  
+  point_x=int(point[0]);
+  point_y=int(point[1]);
+
 }
