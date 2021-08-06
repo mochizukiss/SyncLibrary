@@ -6,7 +6,7 @@ int point_x=400;
 int point_y=400;
 
 //サーバー名
-String websocketServerName = "websockect-mochizuki";
+String websocketServerName = "replace-it-with-your-heroku-app-name";
 
 void settings() {
   size(800, 800); 
